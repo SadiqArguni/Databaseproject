@@ -51,18 +51,18 @@
 	
 	<!-- Create a web page that displays previously created orders for that user (determined by email) and allow them to view and re-order any previous order. -->
 
-	<div class="container text-blue" style="border: 5px solid  #910033;">
-		<div class="mainContent" id="mainContent">
+	<div class="container text-blue" >
+		<div class="mainContent" id="mainContent" >
 
 			<p class="mt-20" ">Order History:</p>
 
 			<?php if($previousOrder != null)for ($i=0; $i < sizeof($ORDER_DATE); $i++) { ?>
 
 				<button type="button" class="mt-10 collapsible" style="background-color: gray"><?php echo "Order#" . ($i+1) . " Date: " . $ORDER_DATE[$i] ?></button>
-				<div class="content d-flex flex-column align-items-center">
+				<div class="content d-flex flex-column align-items-center" style="border: 5px solid  #910033;">
 				  <p class="mt-10 ta-center lh-15">
 				  	<?php
-				  		echo "Dough type: ". $dough[$i]. "<br>Sauce type: ".$sauce[$i]. "<br>Cheese type: ".$cheese[$i]. "<br>Toppings: ".$toppings[$i] . "<br><br>Delivered to Address: ". $address[0]."<br>City: ".$city[0]."<br>Province: ".$province[0]."<br>PostalCode: ".$postalCode[0];
+				  		echo "Pizza type: ". $dough[$i]. "<br>Sauce type: ".$sauce[$i]. "<br>Cheese type: ".$cheese[$i]. "<br>Toppings: ".$toppings[$i] . "<br><br>Delivered to Address: ". $address[0]."<br>City: ".$city[0]."<br>Province: ".$province[0]."<br>PostalCode: ".$postalCode[0];
 				  	?>
 				  		
 				  	</p>

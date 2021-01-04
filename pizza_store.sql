@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2020 at 03:05 PM
+-- Generation Time: Dec 20, 2020 at 03:05 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
 
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `pizza_store`
 --
 
--- --------------------------------------------------------
+-- ------------------------
 
 --
 -- Table structure for table `Customers`
@@ -74,8 +74,8 @@ INSERT INTO `Orders` (`orderID`, `date`, `email`) VALUES
 
 CREATE TABLE `Pizza` (
   `pizzaID` int(11) NOT NULL,
-  `dough` varchar(100) NOT NULL,
-  `sauce` varchar(200) NOT NULL,
+  `pizzaType` varchar(100) NOT NULL,
+  `sauceType` varchar(200) NOT NULL,
   `cheese` varchar(200) NOT NULL,
   `toppings` varchar(100) NOT NULL,
   `currentOrderKey` varchar(11) NOT NULL
@@ -85,21 +85,21 @@ CREATE TABLE `Pizza` (
 -- Dumping data for table `Pizza`
 --
 
-INSERT INTO `Pizza` (`pizzaID`, `dough`, `sauce`, `cheese`, `toppings`, `currentOrderKey`) VALUES
-(1, 'doughType_2', 'sauceType_2', 'topping_4 topping_8 ', 'cheeseType_2', 're0UwIFKcN'),
-(2, 'doughType_2', 'sauceType_2', 'topping_7 topping_8 topping_9 topping_10 ', 'cheeseType_2', 'UY0kTwEhqi'),
-(3, 'doughType_2', 'sauceType_3', 'topping_4 topping_5 ', 'cheeseType_3', 'tkyDlg1rKL'),
-(4, 'doughType_2', 'sauceType_3', 'topping_4 topping_7 ', 'cheeseType_2', 'RSJOzQYZVJ'),
-(5, 'doughType_2', 'sauceType_2', 'topping_4 topping_5 topping_8 ', 'cheeseType_2', 'yZ4BQBEIBB'),
-(6, 'doughType_3', 'sauceType_2', 'topping_1 topping_2 topping_7 topping_8 ', 'cheeseType_2', 'mTiD9fymx3'),
-(7, 'doughType_1', 'sauceType_3', 'topping_1 topping_2 topping_5 topping_7 topping_8 ', 'cheeseType_1', 'Tth5IAZssv'),
-(8, 'doughType_3', 'sauceType_1', 'topping_4 ', 'cheeseType_3', 'Tx59KlqBRM'),
-(9, 'doughType_3', 'sauceType_2', 'topping_1 topping_2 topping_3 ', 'cheeseType_2', 'tneHRDH1f9'),
-(10, 'doughType_3', 'sauceType_2', 'cheeseType_2', 'topping_1 topping_2 topping_3 topping_1 topping_2 topping_3 ', 'tneHRDH1f9'),
-(11, 'doughType_1', 'sauceType_1', 'cheeseType_1', 'topping_1 ', '8AfqWtBjB4'),
-(12, 'doughType_2', 'sauceType_2', 'cheeseType_2', 'topping_2 ', '8AfqWtBjB4'),
-(13, 'doughType_2', 'sauceType_2', 'cheeseType_2', 'topping_1 topping_2 topping_3 topping_6 topping_8 ', 'bgSzz0qfET'),
-(14, 'doughType_2', 'sauceType_3', 'cheeseType_2', 'topping_1 topping_2 ', 'bgSzz0qfET');
+INSERT INTO `Pizza` (`pizzaID`, `pizzaType`, `sauceType`, `cheese`, `toppings`, `currentOrderKey`) VALUES
+(1, 'deep_dish_pizza', 'white_garlic_sauce', 'topping_4 topping_8 ', 'cheeseType_2', 're0UwIFKcN'),
+(2, 'deep_dish_pizza', 'white_garlic_sauce', 'topping_7 topping_8 topping_9 topping_10 ', 'cheeseType_2', 'UY0kTwEhqi'),
+(3, 'deep_dish_pizza', 'garlic_ranch_sauce', 'topping_4 topping_5 ', 'cheeseType_3', 'tkyDlg1rKL'),
+(4, 'deep_dish_pizza', 'garlic_ranch_sauce', 'topping_4 topping_7 ', 'cheeseType_2', 'RSJOzQYZVJ'),
+(5, 'deep_dish_pizza', 'white_garlic_sauce', 'topping_4 topping_5 topping_8 ', 'cheeseType_2', 'yZ4BQBEIBB'),
+(6, 'buffalo_pizza', 'white_garlic_sauce', 'topping_1 topping_2 topping_7 topping_8 ', 'cheeseType_2', 'mTiD9fymx3'),
+(7, 'pan_pizza', 'garlic_ranch_sauce', 'topping_1 topping_2 topping_5 topping_7 topping_8 ', 'cheeseType_1', 'Tth5IAZssv'),
+(8, 'buffalo_pizza', 'pesto_sauce', 'topping_4 ', 'cheeseType_3', 'Tx59KlqBRM'),
+(9, 'buffalo_pizza', 'white_garlic_sauce', 'topping_1 topping_2 topping_3 ', 'cheeseType_2', 'tneHRDH1f9'),
+(10, 'buffalo_pizza', 'white_garlic_sauce', 'cheeseType_2', 'topping_1 topping_2 topping_3 topping_1 topping_2 topping_3 ', 'tneHRDH1f9'),
+(11, 'pan_pizza', 'pesto_sauce', 'cheeseType_1', 'topping_1 ', '8AfqWtBjB4'),
+(12, 'deep_dish_pizza', 'white_garlic_sauce', 'cheeseType_2', 'topping_2 ', '8AfqWtBjB4'),
+(13, 'deep_dish_pizza', 'white_garlic_sauce', 'cheeseType_2', 'topping_1 topping_2 topping_3 topping_6 topping_8 ', 'bgSzz0qfET'),
+(14, 'deep_dish_pizza', 'garlic_ranch_sauce', 'cheeseType_2', 'topping_1 topping_2 ', 'bgSzz0qfET');
 
 -- --------------------------------------------------------
 
